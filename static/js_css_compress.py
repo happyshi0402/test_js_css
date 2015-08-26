@@ -65,7 +65,7 @@ class JsCssFileCompress:
                     if filtrate:
                         if newDir and(os.path.splitext(newDir)[1] in Const_Image_Format):
                             #file_name = os.path.splitext(newDir)[0]
-                            file_name = name
+                            file_name = name.split(".")[0]
                             has_min_flag = file_name.find('min')
                             has_min_flag2 = file_name.find('jquery')
                             has_min_flag3 = file_name.find('_min')
@@ -83,13 +83,8 @@ class JsCssFileCompress:
                             if pass_flag == False:
                                 min_file_name = "%s_min.js" % file_name
                                 # min_file_dir = os.path.join(compress_file_dir, min_file_name)
-                                min_file_dir = compress_file_dir +  min_file_name
-                                print min_file_dir
-
-                                file_dict = {}
-                                file_dict['newDir'] = newDir
-                                file_dict['min_file_dir'] = min_file_dir
-                                file_list.append(file_dict)
+                                min_file_dir = compress_file_dir + min_file_name
+                                #print min_file_dir
 
                                 file = open(min_file_dir, 'w')
                                 file.close()
@@ -97,10 +92,12 @@ class JsCssFileCompress:
                                 file_md5_dict = {}
                                 file_md5_dict['data'] = get_files_md5_dict(js_file_dir)
 
+
                                 input_name = os.path.basename(file_name)+".js"
-                                output_name = os.path.basename(min_file_name)
+                                # output_name = os.path.basename(min_file_name)
 
                                 for file_md5 in file_md5_dict['data']['json']:
+
                                     if file_md5['file_name'] == input_name:
                                         md5v = get_file_md5_value(newDir)
                                         if file_md5['md5'] == md5v:
