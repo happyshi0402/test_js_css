@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+.container dl{ text-align:center; margin:20px auto 46px;}
+.head-portraitOne{ width:158px; height:158px; border-radius:50%; overflow:hidden; background-color:#FFF; text-align:center; margin:0px auto 16px; padding: 0px; border:4px solid #d8d8d8;}
+.sanger{ font-size:26px;}
+.nav-tabt{
+	width:auto;
+	margin:0 auto 30px;
+	text-align:center;
+	background-color:#db5959;
+	}
+.nav-tabs2 {
+	width: 512px;
+	margin:0 auto;
+	background-color:#db5959;
+	}
+.nav-tabs2 > li {
+	width:128px;
+	float: left;
+	margin-bottom: -1px;
+	}
+.nav-tabs2 > li > a {
+	color:#FFF;
+	line-height: 31.5px;
+	border: 1px solid transparent;
+	}
+.nav-tabs2 > li > a:hover {
+	background:none;
+	color: #eaeaea;
+	}
+.nav-tabs2 > li.active > a,
+.nav-tabs2 > li.active > a:hover,
+.nav-tabs2 > li.active > a:focus {
+	color: #fff;
+	cursor: default;
+	background:url(../images/glyphicon-triangle-top.png) no-repeat bottom center;
+	border-bottom-color: transparent;
+	}
+.nav-tabs2 img{ margin:0 2px 0 0;}
+
+.triangle-top{ margin:-16px 17px 0 0; font-size:20px; color:#ebebeb;}
+.panel-body{ background-color:#ebebeb;}
+
+.head-portrait{ list-style:none; width:246px; margin:0px; padding:0px; float:left; margin-left:158px;}
+.head-portrait li{ float:left; margin: 12px 0; width:100%; text-align:center;}
+
+.button-width{ width:246px;}
+.button-margin-l{ margin:12px 0 12px 157px;}
+
+.panel{
+	margin:-1px 0 0 0 !important;
+	}
+.panel-default {
+	border-radius: 0px !important;
+	}
+
+.panel-headingOne {
+	border-bottom: 1px solid transparent;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	}
+.panel-title a{text-decoration:none; font-size:13px; display:block; width:100%; padding: 27.5px 15px; color:#999;}
+.panel-title p{ width:156px !important; float:left; color:#333; font-size:15px;}
+
+.personal-form lable, .personal-form input{ margin: 6px 0;}
+.personal-form label{ width: 152px; text-align: right; font-weight:normal;}
+.personal-form textarea{ min-width: 246px; max-width:246px; max-height:160px; border:none; margin:6px 0;}
+
+.personal-center{ width:100%;}
+.personal-form select,.personal-form input{ width:246px !important; border:none;}
+.personal-form select{ margin:6px 0;}
+
+#ddlProvince{ width:121px !important;}
+#ddlCity{ width:121px !important;}
+
+#province_id,#city_id{ width:121px !important;}
+
+/* 交互提示 图标颜色 */
+.glyphicon-blue{color:#52b3d6; margin:0 6px 0 20px;}
+.glyphicon-pink{color:#fc7675; margin:0 6px 0 20px;}
+.glyphicon-green{color:#93dd6e; margin:0 6px 0 20px;}
+
+/* 常用集合 CSS 开始*/
+.panel-white{ padding:0px; background-color:#fff; border-top:1px solid #dddddd;}
+.border-none{ border:none !important;}
+.commonly-usedJH{ list-style:none; width:100%; margin:0px; padding:0px; float:left;}
+.commonly-usedJH li{ padding:0 15px; float:left; margin-top:12px; color:#289edc; width:100%; border-bottom:1px solid #dddddd;}
+.commonly-usedJH li label{ width: 158px; color:#333; font-weight:normal;text-align:left;}
+.commonly-usedJH li a{ cursor: pointer; color:#fc7675; font-size:13px;}
+.commonly-usedJH li a:hover{ color:#a8a8a8;}
+.bl-editor{ margin-right: 12px;}
+
+/*我的分析 Start */
+.clear{clear: both;}
+/*类型+状态 模块*/
+.mine-analyze-menu{border: 1px solid #d3d3d3;padding:4px 20px 18px;margin-bottom: 26px;}
+.mine-analyze-menu p{margin:12px 0 0;}
+.annly-btn{border-radius: 0;border: none;background:none;padding:2px 14px 3px; }
+.annly-btn:hover{background: #db5959;color: #fff;}
+.red-btn{background: #db5959;color: #fff;}
+/*分析模块内容*/
+.mine-analy-content{padding-bottom: 30px;}
+.mine-analy-content p{margin-bottom: 0;line-height:28px;}
+/*浅色圆圈*/
+.circle{width: 21px;height: 21px;border-radius: 50%;border: 3px solid #f1f1f1;margin-left: 47px;display:block;}
+.analyze-content-footer{border-top: 1px solid #fff;margin-top: -1px;}
+.mine-analy-content ul{clear: both;margin: 0;padding: 0;}
+.mine-analy-content ul li{list-style:none;border-bottom:1px solid #f2f2f2;padding-left: 56px;}
+ul.analy-row{border-left: 3px solid #f2f2f2;padding-top:32px;padding-bottom: 22px;}
+ul.analy-row li{padding-left: 0;border-bottom: none;}
+ul.analy-row li.analy-txt{padding-top:5px;}
+
+ul.analy-row li.analy-txt label{font-size: 18px;font-weight: normal;}
+ul.analy-row li.analy-txt .time{color: #848484;padding-bottom:14px;padding-right:30px;}
+ul.analy-row li.analy-txt .time label{font-size: 14px;font-weight: normal;}
+ul.analy-row li.analy-txt .text_green{color: #419641;}
+.analy_img{width: 70px;height: 70px;border-radius: 50%;background: #f0bd6a;margin-left: -38px;
+	margin-right: 22px;float: left;padding-top: 11px;padding-left: 13px;}
+.pro_state{color: #fff;padding:3px 15px;margin-left: 12px;font-size: 12px;}
+.pro_undone {background: #4e9edd;border-radius: 10px 0 0 10px;}
+.pro_finish{  background: #64ba63;border-radius: 10px;}
+.pro_defeat{background: #db5959;border-radius: 10px 0 0 10px;}
+
+.text-center{text-align: center;}
+.state_chart{padding-top:5px;}
+.state_chart img{margin-left:-5px;}
+.state_chart span{  width: 60px;display: block;margin: 0px 44px;float: left;vertical-align: top;line-height:22px;}
+.analy-result-btn{padding:6px 24px;color: #fff;}
+.analyze-btn-color{background-color: #e2e2e2;}
+.input-data{padding-top:15px;padding-left:55px;}
+.input-data a{text-decoration: none;}
+.data{padding-top:13px;}
+.data p{line-height:28px;}
+
+.analyze-delete{width: 106px;}
+.analyze-delete:hover{color:#fc7675;}
+
+.chart_font{width: 740px;margin: 0 auto;}
+/*我的分析 End*/

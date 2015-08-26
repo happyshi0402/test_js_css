@@ -41,7 +41,7 @@ def walk_dir(dir, fileinfo, topdown=True):
 
 
 
-Const_Image_Format = [".js"]
+Const_Image_Format = [".css"]
 Const_Image_Format_css = [".css"]
 
 
@@ -81,7 +81,7 @@ class JsCssFileCompress:
 
                             #pass_flag = True
                             if pass_flag == False:
-                                min_file_name = "%s_min.js" % file_name
+                                min_file_name = "%s_min.css" % file_name
                                 # min_file_dir = os.path.join(compress_file_dir, min_file_name)
                                 min_file_dir = compress_file_dir +  min_file_name
                                 print min_file_dir
@@ -91,13 +91,15 @@ class JsCssFileCompress:
                                 file_dict['min_file_dir'] = min_file_dir
                                 file_list.append(file_dict)
 
+
+
                                 file = open(min_file_dir, 'w')
                                 file.close()
 
                                 file_md5_dict = {}
                                 file_md5_dict['data'] = get_files_md5_dict(js_file_dir)
 
-                                input_name = os.path.basename(file_name)+".js"
+                                input_name = os.path.basename(file_name)+".css"
                                 output_name = os.path.basename(min_file_name)
 
                                 for file_md5 in file_md5_dict['data']['json']:
@@ -135,7 +137,7 @@ def js_css_compress(input_name, output_name):
 
 
 def get_files_md5_dict(js_file_dir):
-    file_md5_info = open(js_file_dir+'\\js_file_md5.txt', 'r')
+    file_md5_info = open(js_file_dir+'\\css_file_md5.txt', 'r')
     try:
          all_the_file_md5_text = file_md5_info.read()
     finally:
@@ -162,13 +164,13 @@ def cur_file_dir():
 if __name__ == "__main__":
         b = JsCssFileCompress()
         start_dir = cur_file_dir()
-        js_dir = start_dir + "\\js\\"
-        compress_file_dir = start_dir + "\\compress\\"
+        js_dir = start_dir + "\\css\\"
+        compress_file_dir = start_dir + "\\css_compress\\"
 
-        if os.path.exists(js_dir+'\\js_file_md5.txt'):
+        if os.path.exists(js_dir+'\\css_file_md5.txt'):
             pass
         else:
-            fileinfo = open(js_dir+'\\js_file_md5.txt', 'w')
+            fileinfo = open(js_dir+'\\css_file_md5.txt', 'w')
             fileinfo.write("{\"json\":[")
             walk_dir(js_dir, fileinfo)
             fileinfo.write("]}")

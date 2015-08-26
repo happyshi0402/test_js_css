@@ -1,0 +1,254 @@
+/* MAIN STYLES
+-------------------------------------------*/
+/*tab样式*/
+/*
+.position{ color:#1FA2E1; line-height:32px; background:url(../images/bk_horiz_line.jpg) bottom repeat-x;}
+.core ul{ width: 916px; float:left; padding-left:42px;}
+.core ul li{ width:916px; float:left;}
+.title2{ font-size:16px; color:#1FA2E1; margin:40px 0 20px;}
+*/
+nav{min-width: 1204px;}
+.pro_td_add{
+    border:0px solid red!important;
+    /*padding: 0px 0px 9px 0px !important;*/
+    margin:0;
+    /*line-height: 38px !important;*/
+    /*vertical-align:middle !important;*/
+    text-align:right;
+    padding-right: 0 !important;
+    width: 15%;
+}
+.pro_td label{
+    vertical-align: middle;
+    width:75px;
+    text-align:right !important;
+    font-weight: normal;
+    display: block;margin-bottom: 0;line-height: 38px;
+}
+.pro_td_con{
+    border:0px solid blue!important;
+    text-align:left!important;
+    width: 42%;
+}
+.proNameInput{width:235px;}
+.proTitle{width: 100px;}
+
+.pro_td_tag_project{
+    height:35px;
+    line-height:34px !important;
+    padding: 5px!important;
+    padding-left: 10px!important;
+    margin:0!important;
+    font-size: 12px;
+    border:0px solid #40ba11 !important;
+    text-align:left!important;
+}
+.pro_td_tag_project span{font-size: 14px;color: #000;vertical-align: middle;}
+
+#project_project_name_tag,
+#project_description_tag{border: 2px solid #fff;line-height: 24px;}
+#proAttribute{line-height: 30px;}
+.pro_level_property{text-decoration:none;border: 1px solid #ccc;border-radius: 5px;padding:6px 15px;margin-right: 9px;color: #4b4a4c;}
+.pro_level_property:hover{text-decoration: none;color: dodgerblue;}
+.pro_level_property:visited {text-decoration: none;color: #4b4a4c;}
+.pro_td_tr{
+    height:18px;
+    padding: 0!important;
+    margin:0!important;
+    border:0!important;
+}
+.pro_star{
+    color:red;
+    padding-top:17px!important;
+    width:20px;
+    top:5px!important;
+    text-align: right;
+    line-height: 15px!important;
+    border:0!important;
+}
+.pro_descriptRadioField{
+    display: inline;
+}
+#project_modal_dialog{
+    width:660px!important;
+}
+/*项目中使用的样式*/
+#project_auth_modal_dialog{
+    border: 1px solid #f00;
+    width:260px!important;
+}
+
+/* 模态框 弹出位置 */
+.modal-dialog{
+    margin-top:11% !important;
+}
+
+/*
+.project_modal_dialog{ margin-top:12% !important;}
+.project_auth_modal_dialog{margin-top:12% !important;}
+*/
+.add_project{display:block; background:url(../images/add.png) no-repeat 0 center; padding-left:20px;}
+
+#pro_add_span{
+   float:right;
+}
+.pro_tab{
+	width:100%;
+	height:39px;
+	background:url(../images/tab-01.jpg);
+	border-left:2px solid #dedede;
+	border-right:1px solid #dedede;
+    margin: 0;
+    padding: 0;
+	}
+.pro_tab li{
+	background:url(../images/tab-01.jpg) no-repeat 0 0;
+	width: auto;
+	height:39px;
+	display:inline;
+	text-align:center;
+	cursor:pointer;
+	float:left;
+	line-height:18px;
+	color:#333;
+	padding:10px 12px;
+	}
+.tab{
+	border-right:1px solid #dedede;
+	border-left:1px solid #FFF;
+    height:38px!important;
+	margin-right:0;
+	}
+.tab_a{
+    height:38px!important;
+    display: block;
+    text-decoration: none!important;
+}
+.pro_tab li h1{
+	font-size:18px;
+	}
+.pro_tab li p{
+	font-family:Arial, Helvetica, sans-serif;
+	}
+.pro_tab li.on{
+	background:url(../images/tab-02.jpg);
+	color:#747474;
+	}
+.pro_nr{
+	width:100%;
+	/*border:1px solid #ebebeb;	*/
+	overflow:hidden;
+	margin-top:4px;
+	/*Max-Height:476px;
+	Min-Height:84px;
+	_height:expression(this.scrollHeight > 476 ? "476px" : (this.scrollHeight < 84 ? "84px" : "auto"));*/
+	}
+.pro_dl{
+	width:100%;
+	display:inline;
+	padding-bottom:10px;
+	}
+.pro_dl dt{
+	width:100%;
+	overflow:hidden;
+	float:left;
+	}
+.pro_dl dd{
+	width:100%;
+	float:left;
+	}
+.pro_sel{width:120px;}
+#project_panel_page img{ margin-right: 4px;}
+.proCapacity_green{border: 1px solid #42b910;}
+.proCapacity_gray{border: 1px solid #ccc;}
+#project_project_name_tag img,
+#project_description_tag img{margin-right: 5px;}
+.pro_blue_tip{margin-right: 5px;}
+
+/*添加样本的弹窗 Li-Q-Q 2015-07-10 */
+#samCapacity{width:49%;}
+#samCapacity input{
+    /*width: 70%;*/width: 68%;
+}
+/*#samCapacity-onclick{border: 1px solid #42b910;} */
+.sampleWin{width: 700px; /*margin-top:11% !important;*/}
+#sample_phenotype_no{width:66%;}
+#dis_no{display:none;
+    /*margin-top: 3px;*/
+    margin: 3px -15px 0;
+}
+.sampleWin_gray{
+    /*padding:6px 0 0;*/
+    padding:6px 15px 15px;
+}
+.sampleWinSex{width: 38%;}
+.SexIcon{padding:0 10px 0 5px;cursor: pointer;}
+.sampleInput{width: auto;_width: 178px;min-width: 178px;}
+.patients{float: left;}
+.new-triangle{font-size:26px;color: #f1f1ef;left: 78%;display: block;width: 4%;}
+.Cream{background: #f1f1ef;padding:20px 12px;margin-top: -7px;margin-bottom: 21px;}
+
+/*添加样本弹框中的bootstrap-tag-cloud输入框定义*/
+#tag-info_phenotype{
+    /*width: 70%;*/width: 68%;
+}
+#ppp{width:100%;margin-left: -4px;border-radius:5px; }
+#phenotype_tag_div > .tag-info > .PathAdd{margin-top: 6px;}
+.tag-info >ul.GL_filterTip{margin-top: 40px;margin-left: 0;overflow-x: hidden;}
+.tagCloud-sam{padding-left:4%; float: left; width: 670px !important;margin-top: 5px;}
+.tagCloud-sam li{float: left; list-style: none;margin-left: 4px;border-radius:5px;font-size: 12px;}
+.samProperty{border: 1px solid #ccc;border-radius: 5px;padding:6px 10px;color: #4b4a4c;}
+.private{ margin-left: -4px; margin-right: 17px;}
+.public{ margin-left: -4px;}
+.samProperty:hover{border: 1px solid #42b910;text-decoration: none;color: #4b4a4c;}
+.samProperty_pro{border-radius: 5px;padding:6px 12px;margin-right: 10px;color: #4b4a4c;}
+.samProperty_pro:hover{border: 1px solid #42b910;text-decoration: none;color: #4b4a4c;}
+.CharInput{margin-top:2px;}
+#project_panel_page tr td{border-bottom: none;}
+#frechBtn{text-align: center;float: none;}
+
+/*新建项目和添加样本中弹框内容的样式*/
+.clinical{width: 49%;}
+.clinical label{vertical-align: top;}
+.grade{width:48%;display: inline-block;vertical-align: top;margin-top: 6px;}
+.clinInput,.clinicalBox,.gradeInput,.descriptSelect{border-radius: 5px;border: 1px solid #ccc;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;margin-top: 3px;padding:5px;}
+.clinInput{width:66%;}
+.gradeInput{height: 34px;line-height: 34px;width: 65%;}
+.descriptSelect{height: 34px;line-height: 34px;width:100%;}
+.depict label{padding-top: 5px;}
+/*页面中属于内嵌样式的整理*/
+.wait{
+    position:relative;
+    display:none;}
+#wait{
+    position:fixed;
+    display:none;}
+/*新建项目的弹框 Li-Q-Q (2015-07-13)*/
+.project_table{margin-top: 4px;margin-bottom: 0;}
+.project_table tr{clear: both;}
+.project_table tr td{padding-right: 0 !important;}
+.project_table label{font-weight: normal;padding-top: 6px;}
+.depict{padding-top: 13px !important;}
+.depict textarea{
+    max-height: 240px;
+    min-height: 120px !important;
+    height: auto;
+    width: 245px !important;
+}
+.pro_input{width:96%;}
+#description{margin-top: -5px;}
+
+/*新建站内信弹窗*/
+.NewMailBox{padding: 20px 15px 2px;}
+.NewMailBox label{width: 60px;text-align: right;font-weight: normal;float: left;}
+.NewMailBox input{width:88%;}
+.mailContent{resize:none;width: 88%;}
+.mailClose span{background: none;margin: 0;}
+
+/* 突变库 弹窗 */
+.form-groupTwo{ width: 100%;}
+.form-groupTwo label{ width: 28%; text-align: right; font-weight: normal;}
+.form-groupTwo input,.form-groupTwo textarea,.form-groupTwo select{ width: 62% !important;}
+.form-groupTwo textarea{ max-height: 140px; min-height: 100px;}
+.form-groupTwo label,.form-groupTwo input{ margin:0 0 12px 0;}
+#upload-input1{ width: 288px !important; margin:12px 6px 12px 0;}

@@ -1,0 +1,13 @@
+/*源数据页新添加的css文件 2015-06-19*/
+#variant_data_sample_detail th,#variant_data_sample_detail td{border-bottom: none;}
+#variant_data_sample_detail th{text-align: right;font-weight: normal;color:#a6a6a6;
+    /*width: 115px;*/width: 150px;}
+#variant_data_sample_detail td{word-break:break-all;}
+/*上传测序数据 2015-08-01*/
+.file-upload-data{padding: 5% 10%;}
+.upload-test-data span{padding-left: 10px;}
+.star{color: #f00; }
+.upload-data-input{background: #f2f2f2;float: left;width:70%;}
+.data-browse{background: #d0d0d0;color: #fff;height: 34px;left: 12px;position: relative;text-shadow: none;border: none;}
+.data-browse:hover{ background: #d0d0d0;color: #fff;}
+.upload-test{margin-right:72px;}

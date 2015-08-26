@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS 添加样本/突变页 筛选条件 tag-cloud 样式 */
+.input-append, .input-prepend {
+    display: inline-block;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.input-append input{
+    /*width: 125px;*/
+    width: 86%;
+    border-radius: 5px 0 0 5px;border: 1px solid #ccc;line-height: 22px;padding: 5px;
+    display: block;float: left;}
+
+
+.tag-cloud::after {
+    color: #fff;
+    content: " ×";
+    float: right;
+    /*font-size: 20px;*/
+    /*font-weight: bold;*/
+    line-height: 18px;
+    /*opacity: 0.2;*/
+    position: relative;
+    /*text-shadow: 0 1px 0 #ffffff;*/
+    top: 1px;
+    font-size:22px;
+    padding-left: 5px;
+}
+/* Colors */
+.tag-cloud {
+    /*background-color: #70b83a;*/
+    color: #fff;
+    cursor: pointer;
+    margin: 3px 0;
+    /*padding: 5px;*/padding: 0px 8px;
+    vertical-align: baseline;}
+/*新添加的颜色值*/
+.orange{background-color: #f1ad50;}
+.darkBlue{background-color:#367ab7;}
+.aqua{background-color: #5dba5c;}
+.brilliantBlue{background-color: #5ac1df;}
+.red{background-color: #d95450;}

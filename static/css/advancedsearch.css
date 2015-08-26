@@ -1,0 +1,81 @@
+/*高级搜索的定义*/
+.btn-default{background: none;}
+.search-close{background: #fff;border-bottom: none;}
+.close{opacity: 1;}
+.high_search p{color:#b58400;background:#fffdee;border: 1px solid #ffedbb;padding:10px;margin-bottom:12px;}
+/*搜索框+历史搜索+保存搜索记录 模块 start*/
+.row-search{margin-bottom:20px;}
+.deletd_disc{top: 6px;height: auto;background: none;border: none;cursor:pointer;
+display:block;line-height: 34px;position: absolute;right: 0;text-align: center;width: 34px;z-index: 3;}
+
+.has-feedback{min-width:78%;}
+.left-search{float: left;margin-right:11px;}
+#vagaa-input{float: left;padding-left:15%;padding-right: 8px;margin-top: 2px;}
+
+.dropdownmenu{cursor:default;}
+
+.line-search{padding-bottom:20px;padding-left:10%;}
+/*造影结果*/
+.ctpa{float: left;}
+.ctpa-mode{min-width:210px;padding: 12px 8px;}
+.ctpa-option{width:100%;border:none;border-top: 1px solid #ccc;margin-top:14px;}
+.ctpa-option option{padding:5px 0px 5px 10px;}
+/*输入框*/
+#search-input{border-radius:0px 5px 5px 0px;}
+.search-mode{width:100%;}
+.search-mode option{padding:5px 0px 5px 10px;}
+.left-searchInput{float: left;width:100%;}
+/* = 模块 */
+.equal{padding:0 10px;width:60%;float:left;}
+.equal-mode{min-width:210px;padding: 12px 8px;}
+#equal-circle{
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+#equal-circle:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+#equal-circle::-moz-placeholder{color: #999;opacity: 1;}
+#equal-circle:-ms-input-placeholder {color: #999;}
+#equal-circle::-webkit-input-placeholder {color: #999;}
+
+.gt-mode{font-size:100%;}
+.gt{width:100%;border:none;border-top: 1px solid #ccc;margin-top:14px;float: left;}
+.gt option{padding:5px 0px 5px 10px;}
+
+.addBox{padding-left:6%;padding-bottom:30px;}
+.cum{width:57%;padding:0 8px;float:left;}
+
+/*AND*/
+.And{float: left; padding-right:8px;}
+.And-mode{ min-width:210px; padding: 12px 8px;}
+
+ /*All fields*/
+ .fields{float:left;}
+ .fields-mode{padding:12px 8px;}
+
+ /*删除、添加等按钮*/
+ .minusBtn img, .addBtn img{padding-top:5px;}
+
+/*查询按钮*/
+.search-green{width:8%;margin-left:40%;margin-bottom:5%;}
+/*保存分组样式*/
+/*.vagaa-save1{margin-top: 37px;}*/
+.btn-success1{margin: 2px;}
