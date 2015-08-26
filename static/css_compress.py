@@ -158,7 +158,15 @@ if __name__ == "__main__":
         b = JsCssFileCompress()
         start_dir = cur_file_dir()
         js_dir = start_dir + "\\css\\"
+
         compress_file_dir = start_dir + "\\css_compress\\"
+
+        isExists = os.path.exists(compress_file_dir)
+        # 判断结果
+        if not isExists:
+            # 如果不存在则创建目录
+            # 创建目录操作函数
+            os.makedirs(compress_file_dir)
 
         if os.path.exists(js_dir+'\\css_file_md5.txt'):
             pass

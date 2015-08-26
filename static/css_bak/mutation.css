@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+.mutaBasic,.mutaBasic2{ width:49%;}
+.mutaBasic2 .form-control{ width:42%;}
+#m_Chromosome_X{ width:64%;}
+.mutaBaseSelect{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    height: 34px;
+    line-height: 34px;
+    width: 20%;
+    vertical-align: middle;
+}
+#m_Zygosity_X{width:64%;}
+.Hz{width:49%;display: inline-block;}
+.loadDropdown{padding: 5px;}
+.loadDropdown li{line-height: 30px;/*height: 30px;overflow: hidden;*/}
+.loadDropdown li a{float: right;padding:0px 5px;margin-top: 5px;}
+
+/*Save As弹框的样式*/
+.saveBox{display: inline-block;}
+.saveDropdown{display: none;position:absolute;background-color: #fff;padding: 10px;}
+.saveDropdown li{list-style: none;}
+/*.screening2 {margin-top:5px;}*/
+
+/*突变页样式*/
+.chart-triangle{font-size:26px;left: 31%;color: #d6d6d6;}
+.align_l span,.Frequency span{width: 18px;height: 18px;display:inline-block;}
+.align_l span{background: #009900; margin: 0px !important;}
+.align_l span.red{background: #9b0707;}
+.align_l span.yellow{background: #efcb05;}
+.Frequency span.Fregreen{background: #9ad970; float: left; margin-right: 1px;}
+.Frequency span.slsk{border: 1px solid #d6d6d6; float: left; margin-right: 1px;}
+.GeneBtn{
+    background: #51b80d;
+    border: none;
+    width: 100%;
+    padding:8px 0;
+    /*border-radius:5px;margin-top:10px;*/
+    color: #fff;
+}
+.GeneInput{position: relative;}
+.GeneTitle{cursor: pointer;border: none;margin-top: -6px;margin-left: -10px; height: auto;}
+.tri{position: absolute;z-index: 10;top: 15px;right:6px;cursor: pointer;}
+.GeneInputSelect{display: none;position: absolute;width:54%;z-index: 5;}
+.Gene-option{width: 100%;border: 1px solid #ccc;/*display: none;*/}
+.Gene-option option{padding: 5px;}
+
+.PathwaySet{height: auto; padding: 6px 0px;background:none;border: none;}
+.tag_pathway_set li{padding: 5px 2px;}
+
+.tag-info{width: 100%;}
+.input-prepend {
+    width: 98%;
+}
+
+.PathAdd{background: #ccc;border-radius: 0 5px 5px 0;padding: 11px 8px 10px 2px;margin-top: 3px;}
+.PathAdd img{padding-left:5px;}
+
+#tag-cloud {margin-left: 0;width: 100%;}
+#tag-cloud li{width: 100%;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+.GeneWin{display: none;position: absolute;
+    width:100%;
+    height:100%;}
+.GeneWin .newGene {
+    position: relative;
+    float:left;
+    margin-top:268px;
+    height: 120px;
+    width:28px;
+    cursor: pointer;
+    background:#1081a5 url(../images/newGene.jpg) no-repeat;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-box-shadow: -1px 0 5px rgba(0,0,0,0.30);
+    -moz-box-shadow: -1px 0 5px rgba(0,0,0,0.30);
+    box-shadow: -1px 0 5px rgba(0,0,0,0.30);
+}
+.GeneWin .GeneBoxWin{
+    max-height:100%;
+    height:100%;
+    background:#f3f9f9;
+    filter:alpha(opacity=95);
+    -moz-opacity:0.95;
+    -khtml-opacity: 0.95;
+    opacity: 0.95;
+    -webkit-box-shadow: -1px 0 5px rgba(0,0,0,0.30);
+    -moz-box-shadow: -1px 0 5px rgba(0,0,0,0.30);
+    box-shadow: -1px 0 5px rgba(0,0,0,0.30);
+    width:322px;
+    background-repeat:no-repeat;
+    background-position: -131px bottom;
+    float:left;
+    /*overflow:hidden;*/
+    /*margin-left: 28px;*/
+}
+.GeneBoxWin ul{padding: 0 4%;}
+.GeneBoxWin ul li{font-size: 16px;margin: 15px 0;}
+.GeneBoxWin ul li label{font-weight: normal;font-size:14px;}
+.GeneBoxBtn{width: 100%;border: none;background-image:none;background: #107fa3;color: #fff;padding:8px 0;}
+.GeneBoxBtn:hover,.GeneBoxBtn:focus,.SaveBtn:hover,.SaveBtn:focus{color: #fff;}
+
+.GeneSaveBox{display: none;width: 100%;border-top:1px solid #ddd;padding: 0 4%;}
+.GeneSaveBox p{margin: 0;padding-top: 20px;padding-bottom: 10px;}
+
+.GeneState{border:1px solid #ddd;border-radius: 5px;padding:5px 10px;}
+.GeneState p{padding: 0 !important;line-height: 28px;}
+.GeneState ul{
+    padding:5px 0 0 !important;
+    height: 270px;
+    overflow-y: scroll;
+}
+.GeneState ul li{margin: 0 !important; }
+.GeneState label{display: block;color: #6ada1e;font-weight:normal;}
+.GeneState label.GeneDanger{color: #9d0e0e;}
+.GeneState input{margin-right:8px;}
+.SaveBtn{background: #6ada1e;width: 100%;margin-top: 22px;color: #fff;padding:8px 0;}
+/*突变数目和基因数目*/
+#travel3 caption{background: #f7f7f7;color: #000;}
+#travel3 caption span{padding:0 15px;}
+
+/*加载更多按钮*/
+.btn-loading-bg{ border-top: 1px solid #ccc; text-align: center; margin: 60px 0 0;}
+.btn-loading{ padding: auto  100px !important; width: 20%; margin:-18px auto 0 !important; background: #eaeaea;}
+/*突变页的筛选按钮*/
+.variantScreen{float: right;}
+.useApply{background: #53b3d9;border: none;color: #fff;}
+.useApply:hover{background: #117fa2;color: #fff;}
+#m_variant_filter_list{background: #fff;}
+#m_variant_filter_list li:hover{background:#f5f5f5;cursor: pointer;}
+#m_input_filterName{width:56%;display:inline-block;}

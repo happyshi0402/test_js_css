@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* Easy Tree style */
+
+.tree-body { margin:0 120px !important; border-top:none !important;}
+.panel-titleTwo { margin-top:-20px !important;}
+.panel-headingTwo {border-top:1px solid #ccc; border-radius:0 !important; margin-top: 30px;}
+.panel-title a { background:#FFF !important; text-decoration:none; padding:0 8px;}
+
+.easy-tree ul{ outline:none !important; -moz-outline:none;}
+
+.easy-tree {
+    min-height: 20px;
+    margin-bottom: 20px;
+    /*background-color: #e56155;*/
+    color: #fff;
+    border-top: none;
+    padding-bottom: 15px;
+}
+
+.easy-tree > ul {
+    padding-left: 15px;
+}
+
+.easy-tree li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 5px 0 5px;
+    position: relative;
+}
+
+.easy-tree li::before, .easy-tree li::after {
+    content: '';
+    left: -30px;
+    position: absolute;
+    right: auto;
+}
+
+.easy-tree li::before {
+    border-left: 1px solid #3b92e3;
+    bottom: 50px;
+    height: 100%;
+    top: 0;
+    width: 1px;
+}
+
+.easy-tree li::after {
+    border-top: 1px solid #3b92e3;
+    height: 20px;
+    top: 25px;
+    width: 35px !important;
+}
+
+.easy-tree li > span { border: 1px solid #3b92e3; background-color:#3b92e3;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 30px 5px 10px;
+    text-decoration: none
+}
+
+.easy-tree li.parent_li > span {
+    cursor: pointer
+}
+
+.easy-tree > ul > li::before, .easy-tree > ul > li::after {
+    border: 0
+}
+
+.easy-tree li:last-child::before {
+    height: 30px
+}
+
+.easy-tree li.parent_li > span:hover, .easy-tree li.parent_li > span:hover + ul li span {
+    background: #a8cdef;/* 鼠标滑过背景颜色*/
+    color: #fff;
+}
+
+.easy-tree li.parent_li > span:hover + ul li.li_selected span {
+    background: #fff;
+    color: #e56155;
+}
+
+.easy-tree li > span > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.easy-tree li > span > span.glyphicon-folder-close, .easy-tree li > span > span.glyphicon-folder-open {
+    margin-right: 5px;
+}
+
+.easy-tree li.li_selected > span, .easy-tree li.li_selected > span > a {
+    background: #fff;/* 点击后 背景颜色 */
+    color: #e56155;
+}
+
+.easy-tree li.li_selected > span:hover, .easy-tree li.li_selected > span:hover > a {
+    background: #fff;
+    color: #ff6c60;
+}
+
+.easy-tree .easy-tree-toolbar {
+    width:auto
+    border:1px solid #3b92e3;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.easy-tree .easy-tree-toolbar > div {
+    display: inline-block;
+}
+
+.easy-tree .easy-tree-toolbar > div > button {
+    border-radius: 0;
+    margin: 10px 5px;
+}
+
+.easy-tree .easy-tree-toolbar .create .input-group {
+    top: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.easy-tree .easy-tree-toolbar .create .input-group input {
+    border-radius: 0;
+}
+
+.easy-tree .easy-tree-toolbar .create .input-group button {
+    border-radius: 0;
+}
+.easy-tree .easy-tree-editor{
+    color: #000;
+}
