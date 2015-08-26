@@ -76,7 +76,6 @@ class JsCssFileCompress:
                             if has_min_flag2 >= 0:
                                 pass_flag = True
                             if has_min_flag3 >= 0:
-                                os.remove(newDir)
                                 pass_flag = True
 
                             #pass_flag = True
@@ -125,7 +124,7 @@ class JsCssFileCompress:
 
 
 def js_css_compress(input_name, output_name):
-    java_cmd = 'java -jar ../my_js_compress_1.0.1.jar %s -o %s' % (input_name, output_name)
+    java_cmd = 'java -jar ../my_js_compress_1.0.2.jar %s -o %s' % (input_name, output_name)
     print java_cmd
     os.system(java_cmd)
 
