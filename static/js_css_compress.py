@@ -5,6 +5,7 @@ import os
 import sys
 import md5
 import json
+import shutil
 
 
 __author__ = 'wangshifeng'
@@ -20,29 +21,7 @@ def get_file_md5_value(f_path):
         m.update(d)
     return m.hexdigest()
 
-
-def walk_dir(dir, fileinfo, topdown=True):
-
-    for root, dirs, files in os.walk(dir, topdown):
-        for name in files:
-            path = os.path.join(root, name)
-            md5v = get_file_md5_value(path)
-            if path and(os.path.splitext(path)[1] in Const_Image_Format):
-                has_min_flag = name.find('min')
-                has_min_flag2 = name.find('jquery')
-                if has_min_flag >= 0:
-                    pass
-                elif has_min_flag2 >= 0:
-                    pass
-                else:
-                    fileinfo.write('{"file_name":"'+name + '","md5":"' + md5v + '"},')
-        # for dir2 in dirs:
-        #     walk_dir(dir2, fileinfo)
-
-
-
 Const_Image_Format = [".js"]
-Const_Image_Format_css = [".css"]
 
 
 class JsCssFileCompress:
@@ -54,84 +33,80 @@ class JsCssFileCompress:
 
     def Find_JS_File_Compress(self, js_file_dir, compress_file_dir, filtrate=1):
         global Const_Image_Format
-        file_list = []
-        #for s in os.listdir(js_file_dir):
+        update_md5_file = False
+        update_bak_md5_file = False
         for root, dirs, files in os.walk(js_file_dir, True):
             for name in files:
                 newDir = os.path.join(root, name)
-                #newDir = os.path.join(js_file_dir, s)
 
                 if os.path.isfile(newDir):
                     if filtrate:
                         if newDir and(os.path.splitext(newDir)[1] in Const_Image_Format):
-                            #file_name = os.path.splitext(newDir)[0]
-                            file_name = name.split(".")[0]
+                            file_name = name
                             has_min_flag = file_name.find('min')
-                            has_min_flag2 = file_name.find('jquery')
-                            has_min_flag3 = file_name.find('_min')
+                            has_min_flag2 = file_name.find('jplist')
+                            has_min_flag3 = file_name.find('jplist-core')
 
                             pass_flag = False
                             if has_min_flag >= 0:
                                 pass_flag = True
+
                             if has_min_flag2 >= 0:
-                                pass_flag = True
+                                pass_flag = False
+
                             if has_min_flag3 >= 0:
                                 pass_flag = True
 
-                            #pass_flag = True
-                            if pass_flag == False:
-                                min_file_name = "%s_min.js" % file_name
-                                # min_file_dir = os.path.join(compress_file_dir, min_file_name)
-                                min_file_dir = compress_file_dir + min_file_name
-                                #print min_file_dir
-
-                                file = open(min_file_dir, 'w')
-                                file.close()
+                            if pass_flag==False:
+                                min_file_dir = newDir.replace(js_file_dir, compress_file_dir)
 
                                 file_md5_dict = {}
-                                file_md5_dict['data'] = get_files_md5_dict(js_file_dir)
+                                file_md5_dict['data'] = get_files_md5_dict(compress_file_dir)
 
-
-                                input_name = os.path.basename(file_name)+".js"
-                                # output_name = os.path.basename(min_file_name)
+                                input_name = name
 
                                 for file_md5 in file_md5_dict['data']['json']:
 
                                     if file_md5['file_name'] == input_name:
                                         md5v = get_file_md5_value(newDir)
                                         if file_md5['md5'] == md5v:
-                                            if os.path.exists(min_file_dir):
-                                                if os.path.getsize(min_file_dir) == 0:
-                                                    js_css_compress(newDir, min_file_dir)
-                                                    self.fileList.append(newDir)
-                                                    self.counter += 1
-                                            else:
-                                                js_css_compress(newDir, min_file_dir)
-                                                self.fileList.append(newDir)
-                                                self.counter += 1
+                                            js_css_compress(newDir, newDir)
+                                            update_md5_file = True
+                                            print '----1--------'
                                         else:
-                                            if os.path.exists(min_file_dir):
-                                                 os.remove(newDir)
-                                            else:
-                                                js_css_compress(newDir, min_file_dir)
-                                                self.fileList.append(newDir)
-                                                self.counter += 1
-                    else:
-                        self.fileList.append(newDir)
-                        self.counter += 1
-            # else:
-            #     self.Find_JS_File_Compress(newDir)
-
+                                            file_md5_dict2 = {}
+                                            file_md5_dict2['data'] = get_files_md5_dict(js_file_dir)
+                                            input_name = name
+                                            for file_md52 in file_md5_dict2['data']['json']:
+                                                if file_md52['file_name'] == input_name:
+                                                    if file_md52['md5'] == md5v:
+                                                        # 说明文件已经压缩过
+                                                        print '----3--------'
+                                                        pass
+                                                    else:
+                                                        # 说明文件已经更新
+                                                        print '----2--------'
+                                                        os.remove(min_file_dir)  # 删除备份的
+                                                        shutil.copyfile(newDir, min_file_dir)  # 备份最新的
+                                                        js_css_compress(newDir, newDir)  # 压缩最新的文件
+                                                        update_md5_file = True
+                                                        update_bak_md5_file = True
+        if update_md5_file == True:
+            # 压缩完成后更新 md5 信息
+            write_md5_txt(js_dir, True)
+        if update_bak_md5_file == True:
+            # 压缩完成后更新 md5 信息
+            write_md5_txt(compress_file_dir, True)
 
 
 def js_css_compress(input_name, output_name):
-    java_cmd = 'java -jar ../my_js_compress_1.0.2.jar %s -o %s' % (input_name, output_name)
+    java_cmd = 'java -jar my_js_compress_1.0.2.jar %s -o %s' % (input_name, output_name)
     print java_cmd
     os.system(java_cmd)
 
 
-def get_files_md5_dict(js_file_dir):
-    file_md5_info = open(js_file_dir+'\\js_file_md5.txt', 'r')
+def get_files_md5_dict(compress_file_dir):
+    file_md5_info = open(compress_file_dir+'\\js_file_md5.txt', 'r')
     try:
          all_the_file_md5_text = file_md5_info.read()
     finally:
@@ -155,37 +130,50 @@ def cur_file_dir():
         return os.path.dirname(path)
 
 
+def walk_dir(dir, fileinfo, topdown=True):
+    for root, dirs, files in os.walk(dir, topdown):
+        for name in files:
+            path = os.path.join(root, name)
+            md5v = get_file_md5_value(path)
+            if path and(os.path.splitext(path)[1] in Const_Image_Format):
+                fileinfo.write('{"file_name":"'+name + '","md5":"' + md5v + '"},')
+
+
+def write_md5_txt(compress_file_dir, remove_file_flag = False):
+    # md5信息的文件是否存在，不存在创建,存在删除后创建
+    file_path = compress_file_dir+'\\js_file_md5.txt'
+    if os.path.exists(file_path):
+        if remove_file_flag ==  True:
+            os.remove(file_path)
+
+            md5_file = open(file_path, 'w')
+            md5_file.write("{\"json\":[")
+            walk_dir(compress_file_dir, md5_file)
+            md5_file.write("]}")
+            md5_file.close()
+    else:
+        md5_file = open(file_path, 'w')
+        md5_file.write("{\"json\":[")
+        walk_dir(compress_file_dir, md5_file)
+        md5_file.write("]}")
+        md5_file.close()
+
+
 if __name__ == "__main__":
         b = JsCssFileCompress()
         start_dir = cur_file_dir()
         js_dir = start_dir + "\\js\\"
+        compress_file_dir = start_dir + "\\js_bak\\"
 
-        compress_file_dir = start_dir + "\\compress\\"
+        if os.path.isdir(js_dir):
+            if os.path.isdir(compress_file_dir):
+                write_md5_txt(js_dir, False)
+                write_md5_txt(compress_file_dir, True)
+            else:
+                write_md5_txt(js_dir, False)
+                shutil.copytree(js_dir, compress_file_dir)
 
-        isExists = os.path.exists(compress_file_dir)
-        # 判断结果
-        if not isExists:
-            # 如果不存在则创建目录
-            # 创建目录操作函数
-            os.makedirs(compress_file_dir)
-
-        if os.path.exists(js_dir+'\\js_file_md5.txt'):
-            pass
-        else:
-            fileinfo = open(js_dir+'\\js_file_md5.txt', 'w')
-            fileinfo.write("{\"json\":[")
-            walk_dir(js_dir, fileinfo)
-            fileinfo.write("]}")
-            fileinfo.close()
-
-        # import time
-        # time.sleep(5)
-
-        # fileinfo = open('d://list3.txt','w')
-        b.Find_JS_File_Compress(js_dir, compress_file_dir)
-        # print(b.counter)
-        # for k in b.fileList:
-        #     print k
+            b.Find_JS_File_Compress(js_dir, compress_file_dir)
 
 
 

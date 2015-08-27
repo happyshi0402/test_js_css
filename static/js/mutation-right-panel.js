@@ -1,1 +1,0 @@
-$(function(){$(".floatL").click(function(){var a=$("#floatTools").css("right");if(a=="0px"){$("#floatTools").animate({right:-372},200)}else{$("#floatTools").animate({right:0},200)}})});$(function(){$(".newGene").click(function(){var a=$(".GeneWin").css("right");if(a=="0px"){$(".GeneWin").animate({right:-400},200)}else{$(".GeneWin").animate({right:0},200)}})});
