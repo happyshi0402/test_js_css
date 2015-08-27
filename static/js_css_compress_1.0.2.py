@@ -6,7 +6,6 @@ import sys
 import md5
 import json
 import shutil
-import platform
 
 
 __author__ = 'wangshifeng'
@@ -107,11 +106,7 @@ def js_css_compress(input_name, output_name):
 
 
 def get_files_md5_dict(compress_file_dir):
-    my_os = platform.platform().split('-')[0]
-    if my_os == "Windows":
-        file_md5_info = open(compress_file_dir+'\\js_file_md5.txt', 'r')
-    else:
-        file_md5_info = open(compress_file_dir+'/js_file_md5.txt', 'r')
+    file_md5_info = open(compress_file_dir+'\\js_file_md5.txt', 'r')
     try:
          all_the_file_md5_text = file_md5_info.read()
     finally:
@@ -146,11 +141,7 @@ def walk_dir(dir, fileinfo, topdown=True):
 
 def write_md5_txt(compress_file_dir, remove_file_flag = False):
     # md5信息的文件是否存在，不存在创建,存在删除后创建
-    my_os = platform.platform().split('-')[0]
-    if my_os == "Windows":
-        file_path = compress_file_dir+'\\js_file_md5.txt'
-    else:
-        file_path = compress_file_dir+'/js_file_md5.txt'
+    file_path = compress_file_dir+'\\js_file_md5.txt'
     if os.path.exists(file_path):
         if remove_file_flag ==  True:
             os.remove(file_path)
@@ -171,13 +162,8 @@ def write_md5_txt(compress_file_dir, remove_file_flag = False):
 if __name__ == "__main__":
         b = JsCssFileCompress()
         start_dir = cur_file_dir()
-        my_os = platform.platform().split('-')[0]
-        if my_os == "Windows":
-            js_dir = start_dir + "\\js\\"
-            compress_file_dir = start_dir + "\\js_bak\\"
-        else:
-            js_dir = start_dir + "/js/"
-            compress_file_dir = start_dir + "/js_bak/"
+        js_dir = start_dir + "\\js\\"
+        compress_file_dir = start_dir + "\\js_bak\\"
 
         if os.path.isdir(js_dir):
             if os.path.isdir(compress_file_dir):
